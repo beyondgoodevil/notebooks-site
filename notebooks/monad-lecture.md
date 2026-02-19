@@ -3,7 +3,7 @@ title: Monad Lecture
 date: 18 Feb 2026 21:14
 ---
 
-# Monad
+# Monad Lecture
 
 [Lecture](https://youtu.be/d9AW5kg2Vms?si=gGDzjOdhzJTIrpA3)
 
