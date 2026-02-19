@@ -1,3 +1,5 @@
+import subprocess, sys
+subprocess.run([sys.executable, "-m", "pip", "install", "pandoc"], check=True)
 #!/usr/bin/env python3
 """
 build.py — Convert all Markdown notebooks to HTML and regenerate index.html
