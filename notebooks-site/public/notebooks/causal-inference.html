@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Causal Inference — Notebooks</title>
+<style>
+  :root {
+    --bg: #f9f7f2;
+    --text: #1a1a18;
+    --link: #7a1a1a;
+    --link-hover: #c0392b;
+    --muted: #666;
+    --border: #ccc9be;
+    --quote-bg: #f0ede4;
+    --code-bg: #edeae0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+  }
+  .site-nav {
+    font-size: 0.88em;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  .site-nav a { color: var(--link); }
+  .site-nav a:hover { color: var(--link-hover); }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 1.25;
+    margin-bottom: 0.3rem;
+  }
+  .last-modified {
+    font-size: 0.85em;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1.8rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  h2 { font-size: 1.2rem; font-weight: bold; margin: 1.8rem 0 0.5rem; }
+  h3 { font-size: 1.05rem; font-weight: bold; margin: 1.4rem 0 0.4rem; }
+  p { margin: 0.85rem 0; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+  blockquote {
+    background: var(--quote-bg);
+    border-left: 3px solid var(--border);
+    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #444;
+  }
+  ul, ol { margin: 0.8rem 0 0.8rem 1.6rem; }
+  li { margin: 0.3rem 0; }
+  code {
+    background: var(--code-bg);
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.88em;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 0.8rem 1rem;
+    border-radius: 3px;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  pre code { background: none; padding: 0; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .footer {
+    margin-top: 3rem;
+    font-size: 0.85em;
+    color: var(--muted);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <a href="../index.html">← Notebooks</a>
+</div>
+
+<h1>Causal Inference</h1>
+<div class="last-modified">Last modified: 06 Feb 2026 14:20</div>
+
+<h1 id="causal-inference">Causal Inference</h1>
+<p>How do we learn cause-and-effect relationships from data?</p>
+<h2 id="the-fundamental-problem">The Fundamental Problem</h2>
+<p>We can never observe the same unit under both treatment and control
+simultaneously. All causal inference therefore requires some untestable
+assumption about counterfactuals.</p>
+<h2 id="frameworks">Frameworks</h2>
+<h3 id="potential-outcomes-rubin">Potential Outcomes (Rubin)</h3>
+<p>Each unit <em>i</em> has potential outcomes Y_i(1) and Y_i(0) — the
+outcome under treatment and under control. The average treatment effect
+is E[Y(1) - Y(0)]. The observed outcome is Y_i = T_i · Y_i(1) + (1 -
+T_i) · Y_i(0).</p>
+<h3 id="directed-acyclic-graphs-pearl">Directed Acyclic Graphs
+(Pearl)</h3>
+<p>Causal structure encoded as a DAG. The <em>do</em>-calculus provides
+rules for computing interventional distributions from observational
+data, when possible. The key tool: d-separation determines which
+conditional independences hold.</p>
+<h3 id="key-assumptions">Key Assumptions</h3>
+<ul>
+<li><strong>Ignorability / unconfoundedness</strong>: treatment
+assignment is independent of potential outcomes, conditional on observed
+covariates</li>
+<li><strong>SUTVA</strong>: no interference between units; well-defined
+treatment</li>
+<li><strong>Overlap / positivity</strong>: every unit has nonzero
+probability of each treatment level</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<ul>
+<li><strong>Randomized experiments</strong>: gold standard, eliminates
+confounding by design</li>
+<li><strong>Instrumental variables</strong>: find a variable that
+affects treatment but not outcome directly</li>
+<li><strong>Regression discontinuity</strong>: exploit sharp thresholds
+in treatment assignment</li>
+<li><strong>Difference-in-differences</strong>: compare before/after
+changes across treated and untreated groups</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="statistics.html">Statistics</a></li>
+<li><a href="graphical-models.html">Graphical Models</a></li>
+</ul>
+
+<hr>
+<div class="footer">
+  <a href="../index.html">Notebooks index</a>
+</div>
+
+</body>
+</html>

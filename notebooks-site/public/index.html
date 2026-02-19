@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notebooks</title>
+<style>
+  :root {
+    --bg: #f9f7f2;
+    --text: #1a1a18;
+    --link: #7a1a1a;
+    --link-hover: #c0392b;
+    --muted: #666;
+    --border: #ccc9be;
+    --quote-bg: #f0ede4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.65;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 1.2rem;
+  }
+  blockquote {
+    background: var(--quote-bg);
+    border-left: 3px solid var(--border);
+    padding: 0.7rem 1.2rem;
+    margin: 1rem 0 1.2rem;
+    font-style: italic;
+    color: #444;
+    font-size: 0.97em;
+  }
+  blockquote p { margin: 0.25rem 0; }
+  cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.9em;
+    color: var(--muted);
+  }
+  p { margin: 0.9rem 0; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+  .meta-links {
+    margin: 0.5rem 0 1.5rem;
+    font-size: 0.92em;
+  }
+  .meta-links a { margin-right: 1rem; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+  /* Pandoc workflow note */
+  .pandoc-note {
+    background: #eef3e8;
+    border: 1px solid #b5c9a4;
+    border-left: 4px solid #5a8a3a;
+    border-radius: 3px;
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0;
+    font-size: 0.93em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  .pandoc-note strong { color: #2e5018; }
+  .pandoc-note a { color: #3a6020; }
+  .pandoc-note code {
+    background: #d4e8c8;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  /* Notebook list */
+  .notebook-list { margin-top: 1rem; }
+  .notebook-entry {
+    padding: 0.28rem 0;
+    border-bottom: 1px dotted var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    line-height: 1.5;
+  }
+  .notebook-entry:last-child { border-bottom: none; }
+  .notebook-entry a { flex: 1; }
+  .notebook-entry .date {
+    font-size: 0.82em;
+    color: var(--muted);
+    white-space: nowrap;
+    font-style: italic;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .footer {
+    margin-top: 2.5rem;
+    font-size: 0.85em;
+    color: var(--muted);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  @media (max-width: 500px) {
+    .notebook-entry { flex-direction: column; gap: 0.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Notebooks</h1>
+
+<blockquote>
+  <p>Burned all my notebooks<br>
+  What good are notebooks<br>
+  If they won't help me survive?</p>
+</blockquote>
+
+<blockquote>
+  <p>But a curiosity of my type remains after all the most agreeable
+  of all vices — sorry, I meant to say: the love of truth has its reward in
+  heaven and even on earth.</p>
+  <cite>—Nietzsche, <em>Beyond Good and Evil</em>, 45</cite>
+</blockquote>
+
+<p>They're, well, notebooks — things I find amusing, outrageous, strange
+or otherwise noteworthy; notes towards works-in-glacial-progress;
+hemi-demi-semi-rants; things I want to learn more about; lists of references;
+quotations from the Talking Heads where appropriate. If you can help with any
+of these, I'd be grateful; if you can tell me of anything I can profitably
+prune, I'd be even more grateful.</p>
+
+<div class="meta-links">
+  <a href="feed.rss">RSS feed</a>
+</div>
+
+<hr>
+
+<div class="pandoc-note">
+  <strong>How this site works:</strong> Each notebook is a Markdown file in the
+  <code>notebooks/</code> folder. Run <code>python3 scripts/build.py</code> to
+  convert them all to HTML and regenerate this index. Then push to GitHub — Netlify
+  auto-deploys. <a href="README.md">Read the full workflow →</a>
+</div>
+
+<hr>
+
+<div class="notebook-list">
+    <div class="notebook-entry">
+      <a href="notebooks/cognitive-science.html">Cognitive Science</a>
+      <span class="date">15 Feb 2026 11:09</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/ai.html">Artificial Intelligence</a>
+      <span class="date">12 Feb 2026 12:21</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/neural-nets.html">Neural Nets, Connectionism, Perceptrons, etc.</a>
+      <span class="date">12 Feb 2026 11:40</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/causal-inference.html">Causal Inference</a>
+      <span class="date">06 Feb 2026 14:20</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/stochastic-processes.html">Stochastic Processes</a>
+      <span class="date">06 Feb 2026 14:20</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/statistics.html">Statistics</a>
+      <span class="date">15 Oct 2025 13:12</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/probability.html">Probability Theory</a>
+      <span class="date">27 Aug 2025 18:00</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/information-theory.html">Information Theory</a>
+      <span class="date">07 Jul 2025 13:35</span>
+    </div>
+    <div class="notebook-entry">
+      <a href="notebooks/complexity.html">Complexity (and/or "Complex Systems")</a>
+      <span class="date">21 Apr 2025 21:17</span>
+    </div>
+
+</div>
+
+<hr>
+<div class="footer">Notebooks</div>
+
+</body>
+</html>
