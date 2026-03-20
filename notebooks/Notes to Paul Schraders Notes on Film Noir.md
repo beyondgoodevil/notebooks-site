@@ -1,5 +1,5 @@
 ---
-title: Notes to Paul Schrader's 'Notes on Film Noir'
+title: Notes to Paul Schrader's Notes on Film Noir
 date: 20 Mar 2026 3:13
 ---
 
